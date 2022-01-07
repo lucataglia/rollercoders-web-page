@@ -1,0 +1,36 @@
+---
+title: Pankov
+author: Luca Tagliabue
+date: 10 Jan 2022
+linkedin: https://it.linkedin.com/in/luca-tagliabue-77a779118
+slug: /projects/pankov
+icon: terminal
+order: 1
+---
+
+# Pankov
+Pankov is a dice game developed with [Akka][1] and [Firebase][2]. We use to play that game
+at the university during our breaks, when during the Spring of 2020 I had the idea of 
+study Akka, Pankov was the perfect use case because is a multiplayer online game and
+that's feet very well to the actor paradigm that Akka expose. 
+
+Pankov can be played both from desktop and mobile devices. If you are playing from
+desktop you have to connect to the port `:2121` while if you are playing from mobile
+(using [Termux][3]) you can connect to the port `:6565` in order to have access to the
+mobile layout of the game. If you will find the mobile layout more confortable you could
+defenitly use it also when you play from desktop.
+
+```bash
+openssl s_client -connect pankov.rollercoders.net:2121 # For desktop devices
+
+openssl s_client -connect pankov.rollercoders.net:6565 # For mobile devices
+```
+
+
+
+
+
+
+[1]: https://www.lightbend.com/akka-platform
+[2]: https://firebase.google.com/
+[3]: https://github.com/termux/termux-app#f-droid
