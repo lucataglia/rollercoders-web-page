@@ -4,7 +4,6 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import CodeBlock from './code-block';
 import Layout from '../Layout';
 import constants from '../../constants';
-import { projects } from './styles.module.css';
 import TerminalIco from '../../assets/icons/terminal.svg';
 import MobileIco from '../../assets/icons/mobile.svg';
 
@@ -18,10 +17,10 @@ const components = {
 };
 
 const MdxLayout = ({ children, pageContext: { frontmatter } }) => (
-  <Layout page={constants.PROJECTS_SLUG}>
+  <Layout bodyClassName="projects" page={constants.PROJECTS_SLUG}>
     <Tabs currentFrontmatter={frontmatter} />
 
-    <article className={`${projects} p-8 sm:p-16 lg:p-32`}>
+    <article className="projects__body p-8 md:p-16">
       <MDXProvider components={components}>{ children }</MDXProvider>
     </article>
   </Layout>

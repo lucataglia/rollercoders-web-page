@@ -9,10 +9,11 @@ order: 1
 ---
 
 # Pankov
-Pankov is a dice game developed with [Akka][1] and [Firebase][2]. We use to play that game
-at the university during our breaks, when during the Spring of 2020 I had the idea of 
-study Akka, Pankov was the perfect use case because is a multiplayer online game and
-that's feet very well to the actor paradigm that Akka expose. 
+A dice game developed with [Akka][1] and [Firebase][2]. 
+
+We use to play that game at the university during our breaks. When during the Spring of 
+2020 I wanted to study Akka, Pankov was the perfect use case to try Akka in a real project because is a 
+multiplayer online game and that's feet very well to the actor paradigm that Akka expose. 
 
 Pankov can be played both from desktop and mobile devices. If you are playing from
 desktop you have to connect to the port `:2121` while if you are playing from mobile
@@ -25,6 +26,12 @@ openssl s_client -connect pankov.rollercoders.net:2121 # For desktop devices
 
 openssl s_client -connect pankov.rollercoders.net:6565 # For mobile devices
 ```
+
+There are two game mode you can play: free game and virtual money game. If you decide to
+create an account you will be able to play also virtual money game, otherwise you will
+be able to just play free game. In the virtual money game mode, everytime you get down to
+5€ or less you can recharge getting other virtual 5€.
+
 
 
 
