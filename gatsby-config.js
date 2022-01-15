@@ -18,7 +18,7 @@ module.exports = {
     description: "Rollercoder portfolio",
     author: "@lucataglia",
   },
-  pathPrefix: `/`,
+  pathPrefix: `/rollercoders-web-page`,
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
