@@ -15,6 +15,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@bit/semantic-org.semantic-ui-react.button": "^0.88.2",
+    "@bit/semantic-org.semantic-ui-react.internal.style-links": "^0.88.2",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@mdx-js/mdx": "^1.6.22",

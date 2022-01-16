@@ -28,3 +28,19 @@
         }
     }
 }
+
+.mbutton {
+    @apply p-4;
+
+    .ui.button {
+        @apply w-32;
+    
+    &.mbutton--selected{
+            @apply text-white bg-indigo-600;
+
+            &:focus {
+                @apply text-white bg-indigo-600;
+            }
+        }
+    }
+}

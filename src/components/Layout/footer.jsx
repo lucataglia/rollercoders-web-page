@@ -1,63 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import MultiButton from '../MultiButton';
 
 const CSS_CLICKABLE_DARK_BG = 'underline hover:text-zinc-300';
 
-const Footer = () => (
-  <footer className="flex flex-col gap-16 p-6 text-center bg-gray-900 text-white">
+const LUCA = 2;
+const ALESSANDRO = 1;
 
-    <div className="flex justify-evenly gap-8 flex-wrap items-center">
-      <div>
-        <h5 className="uppercase font-bold mb-2.5">Alessandro Defendenti</h5>
+const Footer = () => {
+  const [selected, setSelected] = useState(LUCA);
 
-        <div className="flex justify-center mb-6">
-          <LinkedIn href="https://it.linkedin.com/in/alessandro-defendenti-8b4879b5" />
-          <GitHub href="https://github.com/TheFe91" />
-          <Stackoverflow href="https://stackoverflow.com/users/6326261/ale-thefe" />
-          <Gmail href="#" />
-        </div>
-
-        <Aforisma text="The future is still so much bigger than the past" />
+  return (
+    <footer className="flex flex-col gap-16 p-6 text-center bg-gray-900 text-white">
+      <div className="hidden md:flex justify-evenly gap-8 flex-wrap items-center">
+        <Alessandro />
+        <Luca />
       </div>
 
-      <div>
-        <h5 className="uppercase font-bold mb-2.5">Luca Tagliabue</h5>
+      <div className="flex md:hidden justify-evenly gap-8 flex-wrap items-center">
 
-        <div className="flex justify-center mb-6">
-          <LinkedIn href="https://it.linkedin.com/in/luca-tagliabue-77a779118" />
-          <GitHub href="https://github.com/lucataglia" />
-          <Stackoverflow href="https://stackoverflow.com/users/9099269/lucataglia" />
-          <Gmail href="mailto:tagliabue.luca2@gmail.com" />
-        </div>
-
-        <Aforisma href="https://kentcdodds.com/blog/aha-programming" text="Prefer duplication over the wrong abstraction" />
+        <MultiButton
+          onClickOne={() => setSelected(ALESSANDRO)}
+          onClickTwo={() => setSelected(LUCA)}
+          selected={selected}
+        />
+        {selected === ALESSANDRO && <Alessandro />}
+        {selected === LUCA && <Luca /> }
       </div>
 
+      <FinalPartOfTheFooter />
+    </footer>
+  );
+};
+
+const FinalPartOfTheFooter = () => (
+  <div className="flex justify-between gap-8 text-xs">
+    <div>
+      ©
+      {' '}
+      {new Date().getFullYear()}
+      {' '}
+      Copyright: Rollercoders
+    </div>
+    <div>
+      Powered by
+      {' '}
+      <Link className={CSS_CLICKABLE_DARK_BG} target="_blank" to="https://www.gatsbyjs.com/">Gatsby</Link>
+      {' '}
+      and
+      {' '}
+      <Link className={CSS_CLICKABLE_DARK_BG} target="_blank" to="https://tailwindcss.com/">Tailwind</Link>
     </div>
 
-    <div className="flex justify-between gap-8 text-xs">
-      <div>
-        ©
-        {' '}
-        {new Date().getFullYear()}
-        {' '}
-        Copyright:
-        {' '}
-        <a className="text-whitehite" href="https://tailwind-elements.com/">Rollercoders</a>
-      </div>
-      <div>
-        Powered by
-        {' '}
-        <Link className={CSS_CLICKABLE_DARK_BG} target="_blank" to="https://www.gatsbyjs.com/">Gatsby</Link>
-        {' '}
-        and
-        {' '}
-        <Link className={CSS_CLICKABLE_DARK_BG} target="_blank" to="https://tailwindcss.com/">Tailwind</Link>
-      </div>
+  </div>
+);
+const Alessandro = () => (
 
+  <div>
+    <h5 className="uppercase font-bold mb-2.5">Alessandro Defendenti</h5>
+
+    <div className="flex justify-center mb-6">
+      <LinkedIn href="https://it.linkedin.com/in/alessandro-defendenti-8b4879b5" />
+      <GitHub href="https://github.com/TheFe91" />
+      <Stackoverflow href="https://stackoverflow.com/users/6326261/ale-thefe" />
+      <Gmail href="#" />
     </div>
 
-  </footer>
+    <Aforisma text="The future is still so much bigger than the past" />
+  </div>
+
+);
+
+const Luca = () => (
+  <div>
+    <h5 className="uppercase font-bold mb-2.5">Luca Tagliabue</h5>
+
+    <div className="flex justify-center mb-6">
+      <LinkedIn href="https://it.linkedin.com/in/luca-tagliabue-77a779118" />
+      <GitHub href="https://github.com/lucataglia" />
+      <Stackoverflow href="https://stackoverflow.com/users/9099269/lucataglia" />
+      <Gmail href="mailto:tagliabue.luca2@gmail.com" />
+    </div>
+
+    <Aforisma href="https://kentcdodds.com/blog/aha-programming" text="Prefer duplication over the wrong abstraction" />
+  </div>
 );
 
 const Aforisma = ({ href, text }) => {
