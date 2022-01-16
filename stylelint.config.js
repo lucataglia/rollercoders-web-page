@@ -11,6 +11,7 @@ module.exports = {
       ],
     }],
     'selector-class-pattern': null,
+    'max-line-length': null,
     indentation: 4,
   },
 };

@@ -49,3 +49,15 @@
         @apply flex justify-between gap-8 text-xs;
     }
 }
+
+.r-svg {
+    @apply rounded-full text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1;
+
+    &--borded {
+        @apply border-2 border-white hover:border-none;
+    }
+
+    &__content {
+        @apply w-3 h-full mx-auto;
+    }
+}
