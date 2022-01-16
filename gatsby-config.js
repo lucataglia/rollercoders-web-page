@@ -20,6 +20,15 @@ module.exports = {
   },
   pathPrefix: `/rollercoders-web-page`,
   plugins: [
+    {
+      // https://medium.com/@brionmario/how-to-add-stylelint-to-a-gatsby-project-8e47d5cea571
+      resolve: "@danbruegge/gatsby-plugin-stylelint",
+      options: {
+        files: [
+          "**/*.{css,sass,scss}",
+        ],
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images

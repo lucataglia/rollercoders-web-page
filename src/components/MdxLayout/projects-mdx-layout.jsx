@@ -17,10 +17,10 @@ const components = {
 };
 
 const MdxLayout = ({ children, pageContext: { frontmatter } }) => (
-  <Layout bodyClassName="projects" page={constants.PROJECTS_SLUG}>
+  <Layout bodyClassName="r-projects" page={constants.PROJECTS_SLUG}>
     <Tabs currentFrontmatter={frontmatter} />
 
-    <article className="projects__body p-8 md:p-16">
+    <article className="r-projects__body p-8 md:p-16">
       <MDXProvider components={components}>{ children }</MDXProvider>
     </article>
   </Layout>

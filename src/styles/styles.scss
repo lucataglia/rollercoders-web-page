@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.r-underline {
+    @apply underline hover:text-indigo-300;
+}
 
-.projects {
+.r-projects {
     &__body {
         p {
             margin-bottom: 1rem;
@@ -11,8 +14,8 @@
 
         a {
             text-decoration: underline;
-            color: rgb(107,114,118);
- 
+            color: rgb(107 114 118);
+
             &:hover {
                 color: rgb(63 63 70 / var(--tw-text-opacity));
             }
@@ -24,23 +27,25 @@
             font-size: 85%;
             background-color: var(--bs-gray-100);
             color: var(--bs-gray-900);
-            border-radius: 6px;;
+            border-radius: 6px;
         }
     }
 }
 
-.mbutton {
-    @apply p-4;
+.r-footer {
+    @apply flex flex-col gap-12 p-6 text-center bg-gray-900 text-white;
 
-    .ui.button {
-        @apply w-32;
-    
-    &.mbutton--selected{
-            @apply text-white bg-indigo-600;
-
-            &:focus {
-                @apply text-white bg-indigo-600;
-            }
+    &__body {
+        &--large {
+            @apply hidden md:flex justify-evenly gap-8 flex-wrap items-center;
         }
+
+        &--small {
+            @apply flex md:hidden justify-evenly gap-8 flex-wrap items-center;
+        }
+    }
+
+    &__copyright {
+        @apply flex justify-between gap-8 text-xs;
     }
 }

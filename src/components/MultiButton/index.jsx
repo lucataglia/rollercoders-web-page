@@ -4,7 +4,7 @@ const MultiButton = ({
   onClickOne, onClickTwo, selected,
 }) => {
   const selectedCss = 'border-indigo-600 bg-indigo-600 text-white';
-  const notSelectedCss = 'bg-gray-400 hover:bg-gray-500 text-white';
+  const notSelectedCss = 'border-gray-400 bg-gray-400 hover:border-gray-500 hover:bg-gray-500 text-white';
 
   return (
     <div className="flex justify-center gap-1">
