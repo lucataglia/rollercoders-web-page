@@ -10,7 +10,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "styles-autofix": "stylelint 'src/**/*.{css,scss,sass}' --config stylelint.config.js --allow-empty-input --fix",
-    "start": "gatsby develop",
+    "start": "npm run styles-autofix && gatsby clean && gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

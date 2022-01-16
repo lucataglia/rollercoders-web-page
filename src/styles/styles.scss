@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --r-primary-color: rgb(88 80 236); // indigo 600
+    --r-secondary-color: rgb(180 198 252); // indigo 300
+    --r-black: rgb(17 24 39); // gray 900
+}
+
 .r-underline {
     @apply underline;
 
     &:hover {
-        @apply text-indigo-300;
+        color: var(--r-secondary-color);
     }
 }
 
@@ -17,12 +23,7 @@
         }
 
         a {
-            text-decoration: underline;
-            color: rgb(107 114 118);
-
-            &:hover {
-                color: rgb(63 63 70 / var(--tw-text-opacity));
-            }
+            @apply r-underline;
         }
 
         code {
@@ -37,7 +38,9 @@
 }
 
 .r-footer {
-    @apply flex flex-col gap-12 p-6 text-center bg-gray-900 text-white;
+    @apply flex flex-col gap-12 p-6 text-center text-white;
+
+    background-color: var(--r-black);
 
     &__body {
         &--large {
@@ -61,7 +64,8 @@
         @apply border-2 border-white;
 
         &:hover {
-            @apply border-indigo-300 text-indigo-300;
+            border-color: var(--r-secondary-color);
+            color: var(--r-secondary-color);
         }
     }
 
