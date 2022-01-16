@@ -31,11 +31,11 @@ const Example = () => (
               In this web site you can find all our major projects other than all the resources to get in touch with
               us. This site was made using
               {' '}
-              <Link className="underline hover:text-zinc-700" target="_blank" to="https://www.gatsbyjs.com/">Gatsby</Link>
+              <Link className="r-underline" target="_blank" to="https://www.gatsbyjs.com/">Gatsby</Link>
               {' '}
               and
               {' '}
-              <Link className="underline hover:text-zinc-700" target="_blank" to="https://tailwindcss.com/">Tailwind</Link>
+              <Link className="r-underline" target="_blank" to="https://tailwindcss.com/">Tailwind</Link>
             </p>
           </div>
         </main>

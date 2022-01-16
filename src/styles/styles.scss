@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .r-underline {
-    @apply underline hover:text-indigo-300;
+    @apply underline;
+
+    &:hover {
+        @apply text-indigo-300;
+    }
 }
 
 .r-projects {
@@ -51,10 +55,14 @@
 }
 
 .r-svg {
-    @apply rounded-full text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1;
+    @apply rounded-full text-white leading-normal uppercase focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1;
 
     &--borded {
-        @apply border-2 border-white hover:border-none;
+        @apply border-2 border-white;
+
+        &:hover {
+            @apply border-indigo-300 text-indigo-300;
+        }
     }
 
     &__content {
