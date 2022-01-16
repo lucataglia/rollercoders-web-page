@@ -1,18 +1,28 @@
 import React from 'react';
-import Button from '@bit/semantic-org.semantic-ui-react.button';
-import StyleLinks from '@bit/semantic-org.semantic-ui-react.internal.style-links';
 
 const MultiButton = ({
   onClickOne, onClickTwo, selected,
-}) => (
-  <div className="mbutton">
-    <Button.Group>
-      <Button className={selected === 1 ? 'mbutton--selected' : ''} onClick={onClickOne}>Alessandro</Button>
-      <Button.Or />
-      <Button className={selected === 2 ? 'mbutton--selected' : ''} onClick={onClickTwo}>Luca</Button>
-    </Button.Group>
-    <StyleLinks />
-  </div>
-);
+}) => {
+  const selectedCss = 'border-indigo-600 bg-indigo-600 text-white';
+  const notSelectedCss = 'bg-gray-400 hover:bg-gray-500 text-white';
+
+  return (
+    <div className="flex justify-center gap-1">
+      <div className={`${selected === 1 ? selectedCss : notSelectedCss} w-32 group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase focus:outline-none sm:flex-1 shadow-sm cursor-pointer`} onClick={onClickOne} role="presentation">
+        Alessandro
+      </div>
+
+      <div className="flex justify-center items-center relative">
+        <p className="flex justify-center items-center z-10 w-6 h-6 absolute bg-gray-900 text-white text-xs rounded-full text-center">
+          or
+        </p>
+      </div>
+
+      <div className={`${selected === 2 ? selectedCss : notSelectedCss} w-32 group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase focus:outline-none sm:flex-1 shadow-sm cursor-pointer`} onClick={onClickTwo} role="presentation">
+        Luca
+      </div>
+    </div>
+  );
+};
 
 export default React.memo(MultiButton);
